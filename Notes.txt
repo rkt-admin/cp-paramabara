@@ -1,0 +1,17 @@
+PHASE I :
+- About [Company Name]
+      - Company Overview
+      - Core Value 
+      - Corporate Structure *
+      - Organization Structure
+    - Press Release :
+         - berisi mengenai berita2 yang berasal dari dalam perusahaan 
+         - sop/ kebijakan2 dari perusahaan yang berlaku dan terupdate
+     - News & Event :
+         - berisi mengenai kebijakan2 pemerintah
+         - berisi berita2 yang berasal dari koran/ media masa terhadap bisnis yang berhubungan dengan core company
+         - berisi berita2 yang berasal dari koran/ media masa ttg perusahaan seperti reward perusahaan
+    - Company Insight 
+         - berisi unit2 cabang secara mendetail seperti cara kerja
+         - lokasi perusahaan
+         - video2 ttg company
