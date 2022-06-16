@@ -163,3 +163,6 @@ body::-webkit-scrollbar-thumb {
 	padding: 0.5rem 0 0.5rem 1rem;
 	@apply text-slate-500;
 }
+[data-accordion-item] [role='region'] li:not(:first-child):not(:last-child) {
+	padding: 0.5rem 0 0.5rem 0;
+}

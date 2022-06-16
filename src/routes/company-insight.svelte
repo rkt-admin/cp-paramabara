@@ -12,7 +12,11 @@
 <div class="flex flex-wrap max-w-5xl mx-auto">
 	<div class="w-full sm:w-60 mr-4">
 		<Accordion multiselect>
-			<AccordionItem title="Title 1">Test submenu dari accrodion</AccordionItem>
+			<AccordionItem title="Title 1">
+        <li>Content 1</li>
+				<li>Content 2</li>
+				<li>Content 2</li>
+      </AccordionItem>
 			<AccordionItem title="Title 2">Content 2</AccordionItem>
 			<AccordionItem title="Title 3">
 				<AccordionItem title="Title 1">Content 1</AccordionItem>
