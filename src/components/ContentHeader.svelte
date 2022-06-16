@@ -14,6 +14,6 @@
 </div>
 <style lang="postcss">
 	h2 {
-		@apply text-3xl w-full font-bold uppercase bg-slate-400 py-5 px-8 mb-8;
+		@apply text-2xl w-full font-bold uppercase bg-pastel-orange py-3 px-8 mb-8;
 	}
 </style>
