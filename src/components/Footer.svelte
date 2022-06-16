@@ -3,7 +3,7 @@
 </script>
 
 <!-- footer -->
-<footer class="relative mx-auto text-base mt-[1px]">
+<footer class="relative mx-auto text-base">
 	<div class="flex justify-center items-center md:justify-evenly font-normal text-slate-800 dark:text-slate-100 bg-slate-100 dark:bg-slate-800" >
 		<div class="footer-link">
 			<div class="text-gray-800 flex flex-wrap justify-start md:justify-evenly py-5 ml-10">

@@ -30,7 +30,7 @@
 
 <svelte:window bind:scrollY={yScreen} />
 <nav
-	class="backdrop-blur-xl bg-white/90 dark:bg-slate-800 border-gray-200 top-0 sticky text-white {yScreen >
+	class="bg-slate-50 dark:bg-slate-800 top-0 sticky {yScreen >
 	50
 		? ' drop-shadow-md'
 		: ''}"
@@ -43,8 +43,8 @@
 		<div class="flex items-center md:order-2">
 			<button
 				aria-label="Toggle Dark Mode"
-				class="ml-1 flex h-9 w-9 items-center justify-center rounded-lg ring-yellow-400
-				transition-all hover:ring-2 dark:bg-yellow-800"
+				class="ml-1 flex h-9 w-9 items-center justify-center rounded-lg ring-gray-700
+				transition-all hover:ring-1 hover:ring-gray-700 dark:bg-yellow-800"
 				on:click={toggleDarkMode}
 			>
 				{#if isDark}

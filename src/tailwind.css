@@ -114,33 +114,52 @@ body::-webkit-scrollbar-thumb {
 	border-radius: 4px;
 }
 
-
 /* Accordion */
 
 [data-accordion] {
-  list-style: none;
+	list-style: none;
 }
 
 [data-accordion-item] button {
-  border: 0;
-  border-radius: 0;
-  border-bottom: 1px solid #e0e0e0;
-  background: none;
-  font: inherit;
-  line-height: inherit;
-  color: inherit;
-  cursor: pointer;
-  padding: 0.5rem 0;
-  width: 100%;
-  text-align: left;
-  @apply font-semibold;
+	border: 0;
+	border-radius: 0;
+	border-left: 1px solid;
+	background: none;
+	font: inherit;
+	line-height: inherit;
+	cursor: pointer;
+	padding: 0.5rem;
+	width: 100%;
+	text-align: left;
+	@apply text-slate-600 font-semibold border-slate-300;
+}
+
+[data-accordion-item] button:after {
+	content: '\25BC';
+	font-size: 10px;
+	padding-left: 6px;
+	top: 3px;
+	float: right;
+}
+
+[data-accordion-item] button:after {
+	content: '\25BC';
+	font-size: 10px;
+	padding-left: 6px;
+	top: 3px;
+	float: right;
+}
+
+[data-accordion-item] button[aria-expanded="true"]:after{
+	content: '\25BD';
 }
 
 [data-accordion-item] button[disabled] {
-  opacity: 0.5;
-  cursor: not-allowed;
+	opacity: 0.5;
+	cursor: not-allowed;
 }
 
-[data-accordion-item] [role="region"] {
-  padding: 1rem;
+[data-accordion-item] [role='region'] {
+	padding: 0.5rem 0 0.5rem 1rem;
+	@apply text-slate-500;
 }

@@ -37,9 +37,9 @@
 	/>
 </svelte:head>
 <NavMega />
-<div class="bg-slate-50 dark:bg-gray-900 ">
+<div class="bg-slate-200 dark:bg-gray-900 pb-10">
 	<div name="Content" class="mx-auto">
-		<main>
+		<main class="">
 			<slot />
 		</main>
 	</div>
