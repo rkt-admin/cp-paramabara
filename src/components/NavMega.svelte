@@ -10,7 +10,7 @@
 </script>
 
 <svelte:window bind:scrollY={yScreen} />
-<nav class="bg-slate-50 dark:bg-slate-800 top-0 sticky {yScreen > 50 ? ' drop-shadow-md' : ''}">
+<nav class="bg-slate-50 dark:bg-black top-0 sticky {yScreen > 50 ? ' drop-shadow-md' : ''}">
 	<div class="flex flex-wrap justify-between items-center max-w-6xl mx-auto">
 		<span class="hidden md:flex md:order-1 items-center">
 			<Logo text={true} size="medium" />
@@ -134,34 +134,22 @@
 		text-align: left;
 		visibility: hidden;
 		opacity: 0;
-		width: 120%;
+		width: 100%;
 		z-index: 1;
-		@apply w-full left-0 bg-gray-900 -translate-x-2 pt-2;
+		@apply w-full left-0 bg-black -translate-x-2 pt-2 pb-6;
 		transition: visibility 0.5s, opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), transform 1s cubic-bezier(0.075, 0.82, 0.165, 1), height 300ms ease, width 300ms ease;
 	}
 	.hoverable:hover > .megamenu {
 		visibility: visible;
 		opacity: 1;
-		@apply bg-gray-900 translate-x-0;
+		@apply bg-black translate-x-0;
 	}
 	.hoverable:hover {
 		@apply bg-gray-900;
-	}
-
-	.megamenu ul {
-		@apply sm:w-1/2 lg:w-1/4 pt-4 px-4;
-	}
-	.megamenu-header {
-		@apply flex items-center font-bold text-xl text-slate-50 mb-4;
-	}
-	.megamenu-description {
-		@apply text-slate-300 text-sm mb-3;
-	}
-	
+	}		
 	.hoverable {
 		position: static;
-	}
-	
+	}	
 	.hoverable a {
 		@apply text-base text-gray-900 font-medium;
 	}
@@ -173,6 +161,15 @@
 	}
 	.hoverable:hover .megamenu-link a:hover {
 		@apply text-gray-50;
+	}
+	.hoverable .megamenu ul {
+		@apply sm:w-1/2 lg:w-1/4 pt-4 px-4;
+	}
+	.hoverable .megamenu-header {
+		@apply flex items-center font-bold text-xl text-slate-50 mb-4;
+	}
+	.hoverable .megamenu-description {
+		@apply text-slate-300 text-sm mb-3;
 	}
 
 	:global(.dark) nav a {
