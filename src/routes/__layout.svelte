@@ -5,7 +5,8 @@
 		SITE_TITLE,
 		SITE_DESCRIPTION,
 		DEFAULT_OG_IMAGE,
-		MY_TWITTER_HANDLE } from '$lib/siteConfig';
+		MY_TWITTER_HANDLE
+	} from '$lib/siteConfig';
 </script>
 
 <script>
@@ -37,11 +38,9 @@
 	/>
 </svelte:head>
 <NavMega />
-<div class="bg-slate-200 dark:bg-gray-900 pb-10">
-	<div name="Content" class="mx-auto">
-		<main class="">
-			<slot />
-		</main>
-	</div>
+<div class="bg-slate-200 dark:bg-gray-900 pb-10 mx-auto">
+	<main>
+		<slot />
+	</main>
 </div>
 <Footer />

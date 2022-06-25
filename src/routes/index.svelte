@@ -14,7 +14,7 @@
 <div
 	class="flex flex-col justify-center border-gray-200 pb-16 dark:border-gray-700">
 	<Hero />
-	<CategorySection />
+	<!-- <CategorySection /> -->
 
 	<section class="mb-16 w-full">
 		<h3 class="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
@@ -47,5 +47,5 @@
 			></a
 		>
 	</section>
-	<Newsletter />
+	<!-- <Newsletter /> -->
 </div>

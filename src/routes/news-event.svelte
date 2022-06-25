@@ -6,8 +6,8 @@
 </script>
 
 <ContentHeader
-	url="https://www.bayan.com.sg/cfind/source/thumb/images/banner/cover_w1920_h393_banner-awards.jpg"
-	>Company Structure</ContentHeader
+	url="https://www.bayan.com.sg/cfind/source/thumb/images/banner/cover_w1920_h393_1920--barge2.jpg"
+	>News & Event</ContentHeader
 >
 <div class="flex flex-wrap max-w-5xl mx-auto">
 	<div class="w-60 sm:w-60 mr-4">

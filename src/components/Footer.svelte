@@ -1,13 +1,35 @@
 <script>
 	import Logo from '../components/Logo.svelte';
+	let isDark = false;
+	if (typeof localStorage !== 'undefined') {
+		if (
+			localStorage.theme === 'dark' ||
+			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+		) {
+			isDark = true;
+		}
+	}
+	function toggleDarkMode() {
+		if (isDark) {
+			document.documentElement.classList.remove('dark');
+			localStorage.theme = 'light';
+			isDark = false;
+		} else {
+			document.documentElement.classList.add('dark');
+			localStorage.theme = 'dark';
+			isDark = true;
+		}
+	}
 </script>
 
 <!-- footer -->
-<footer class="relative mx-auto text-base">
-	<div class="flex justify-center items-center md:justify-evenly font-normal text-slate-800 dark:text-slate-100 bg-slate-100 dark:bg-slate-800" >
+<footer class="static mx-auto text-base z-0">
+	<div
+		class="flex justify-center items-center md:justify-evenly font-normal text-slate-800 dark:text-slate-100 bg-slate-100 dark:bg-slate-800"
+	>
 		<div class="footer-link">
-			<div class="text-gray-800 flex flex-wrap justify-start md:justify-evenly py-5 ml-10">
-				<div class="px-2 py-3 w-[28rem] text-gray-600 dark:text-slate-300 ">
+			<div class="text-gray-800 flex flex-wrap justify-start md:justify-evenly py-5">
+				<div class="px-2 py-3 w-[26rem] text-gray-600 dark:text-slate-300 ">
 					<div><Logo size="medium" text={true} /></div>
 					<div class="my-2 leading-7 mb-4">
 						Gedung Office 8, Lantai 37, Sudirman CBD Lot 28,<br />
@@ -85,15 +107,53 @@
 					<a href="/#">Analytics</a>
 					<a href="/#">Mobile</a>
 				</div>
-				<div class="p-5 w-48 ">
+				<div class="p-5 w-40 ">
 					<div class="header-section">Support</div>
 					<a href="/#">Help Center</a>
 					<a href="/#">Conditions </a>
 				</div>
+				<div class="py-5 w-10">
+					<button aria-label="Toggle Dark Mode" class="ml-1 flex h-9 w-9 items-center justify-center rounded-lg ring-gray-700 transition-all hover:ring-1 hover:ring-gray-700 dark:bg-slate-700" on:click={toggleDarkMode} >
+						{#if isDark}
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								class="h-5 w-5 text-gray-800 dark:text-yellow-100"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728
+							0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+								/>
+							</svg>
+						{:else}
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								class="w-5 h-5 text-gray-800 dark:text-gray-200"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+								/>
+							</svg>
+						{/if}
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="flex justify-center items-center md:justify-evenly font-normal text-slate-800 dark:text-slate-100 bg-slate-200 dark:bg-slate-800" >
+	<div
+		class="flex justify-center items-center md:justify-evenly font-normal text-slate-800 dark:text-slate-100 bg-slate-200 dark:bg-slate-800"
+	>
 		<div class="mx-auto w-full max-w-5xl py-3 mt-1">
 			<div class="hidden sm:block float-left">
 				<span
@@ -212,7 +272,7 @@
 
 <style lang="postcss">
 	.header-section {
-		@apply text-base uppercase text-gray-400 font-medium mb-6;
+		@apply text-sm uppercase text-gray-400 font-medium mb-6;
 	}
 	.notice {
 		@apply text-teal-600 text-xs pl-1 -mt-1;
@@ -220,11 +280,14 @@
 	.footer-link a {
 		@apply flex text-slate-600 pb-2;
 	}
+	.footer-link a:hover {
+		@apply flex text-pastel-orange;
+	}
 	:global(.dark) .footer-link a {
 		@apply flex text-slate-300 py-2;
 	}
 	.footer-social a {
-		@apply text-slate-600;
+		@apply text-slate-700;
 	}
 	.footer-social a:hover {
 		@apply text-pastel-orange;
