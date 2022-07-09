@@ -15,7 +15,7 @@
 			alt="{SITE_TITLE} Logo"
 		/>
 		{#if text}
-			<div class="inline-block pt-0 h-6 font-bold pl-2 text-lg
+			<div class="inline-block pt-0 h-6 font-light uppercase pl-2 text-lg
 			{theme === 'light' ? 'text-slate-700 dark:text-slate-100' : 'text-slate-100 dark:text-slate-700'}"
 			class:text-small={size === 'small'}
 			class:text-medium={size === 'medium'}
@@ -26,13 +26,13 @@
 
 <style lang="postcss">
 	.small {
-		@apply h-9;
+		@apply h-7;
 	}
 	.medium {
-		@apply h-12;
+		@apply h-9;
 	}
 	.large {
-		@apply h-16;
+		@apply h-11;
 	}
 	.text-small {
 		@apply text-base;

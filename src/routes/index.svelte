@@ -5,18 +5,17 @@
 <script>
 	import Newsletter from '../components/Newsletter.svelte';
 	import FeatureCard from '../components/FeatureCard.svelte';
-	import CategorySection from '../components/CategorySection.svelte';
+	import Video from '../components/Video.svelte';
 	import Hero from '../components/Hero.svelte';
 </script>
 
 
 
-<div
-	class="flex flex-col justify-center border-gray-200 pb-16 dark:border-gray-700">
+<div class="flex flex-col justify-center pb-16">
 	<Hero />
-	<!-- <CategorySection /> -->
+	<!-- <Video /> -->
 
-	<section class="mb-16 w-full">
+	<!-- <section class="mb-16 w-full">
 		<h3 class="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
 			Featured Posts
 		</h3>
@@ -46,6 +45,7 @@
 				/></svg
 			></a
 		>
-	</section>
+	</section> -->
 	<!-- <Newsletter /> -->
+<div class="h-screen"></div>
 </div>

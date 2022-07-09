@@ -41,8 +41,7 @@ const config = {
 		preprocess({
 			postcss: true
 		})
-	],
-
+	],	
 	kit: {
 		adapter: adapter({
 			split: false

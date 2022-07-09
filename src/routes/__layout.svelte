@@ -13,6 +13,7 @@
 	import '../tailwind.css';
 	import NavMega from '../components/NavMega.svelte';
 	import Footer from '../components/Footer.svelte';
+	import MobileMenu from '../components/MobileMenu.svelte';
 </script>
 
 <svelte:head>
@@ -37,10 +38,13 @@
 		href="/rss.xml"
 	/>
 </svelte:head>
-<NavMega />
-<div class="bg-slate-200 dark:bg-gray-900 pb-10 mx-auto">
-	<main>
-		<slot />
-	</main>
+<div class="container max-w-5xl mx-auto bg-white dark:bg-black">
+	<MobileMenu />
+	<NavMega />
+	<div class="my-5">
+		<main>
+			<slot />
+		</main>
+	</div>
+	<Footer />
 </div>
-<Footer />

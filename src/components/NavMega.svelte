@@ -1,5 +1,4 @@
-<script>
-	import MobileMenu from './MobileMenu.svelte';
+<script>	
 	import Logo from './Logo.svelte';
 	import { SITE_URL, REPO_URL, RSS_URL } from '$lib/siteConfig';
 	import NavLink from './NavLink.svelte';
@@ -10,21 +9,17 @@
 </script>
 
 <svelte:window bind:scrollY={yScreen} />
-<nav class="bg-slate-50 dark:bg-black top-0 sticky {yScreen > 50 ? ' drop-shadow-md' : ''}">
-	<div class="flex flex-wrap justify-between items-center max-w-6xl mx-auto">
+<nav class="bg-white dark:bg-black top-0 sticky">
+	<div class="flex flex-wrap justify-between items-center mx-auto">
 		<span class="hidden md:flex md:order-1 items-center">
-			<Logo text={true} size="medium" />
-		</span>
-		<MobileMenu />
-		<div
-			class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
-			id="mobile-menu-2"
-		>
+			<Logo text={true} size="small" />
+		</span>		
+		<div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
 			<ul class="flex">
 				<!--Regular Link-->
 				<li class="hoverable">
 					<a
-						href="/" class="relative block p-6 px-2 lg:px-6 lg:pt-6 lg:pb-5 text-sm lg:text-base font-bold"
+						href="/" class="relative block p-6 px-2 lg:px-6 lg:pt-6 lg:pb-5"
 						>About</a
 					>
 					<div class="megamenu mb-0">
@@ -83,31 +78,31 @@
 				<li>
 					<a
 						href="/company-insight"
-						class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold"
+						class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base"
 						>Company Insight</a
 					>
 				</li>
 				<li>
 					<a
-						href="/company-insight"
-						class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold"
+						href="/sustainability"
+						class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base"
 						>Sustainability</a
 					>
 				</li>
 				<li>
 					<a
 						href="/press-release"
-						class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold">Press Release</a
+						class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base">Press Release</a
 					>
 				</li>
 				<li>
 					<a
 						href="/news-event"
-						class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold">News & Event</a
+						class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base">News</a
 					>
 				</li>
 			</ul>
-		</div>
+		</div>		
 	</div>
 </nav>
 
@@ -117,82 +112,75 @@
 	  Influenced by: https://sproutsocial.com/
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-	/* #Mega Menu Styles
-	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+	/* Main Menu */
+
 	nav a {
-		@apply text-base text-gray-900 font-medium;
+		@apply text-black dark:text-white text-sm font-light uppercase;
+
+		/*hover*/
+		/* @apply border-4 border-white hover:border-black dark:border-black dark:hover:border-white; */
 	}
 	nav a:hover {
-		@apply text-gray-50 bg-gray-900;
+		@apply text-white dark:text-black bg-black dark:bg-white;
+	}	
+
+	/* Main Menu > link megamenu */
+	.hoverable {
+		position: static;
+	}		
+	.hoverable a {
+		@apply text-black dark:text-white;
+		/* @apply border-4 border-white hover:border-4 hover:border-black dark:border-black dark:hover:border-white dark:hover:border-b-black;		 */
+	}
+	.hoverable:hover a {
+		@apply text-white dark:text-black bg-black dark:bg-white;
+	}	
+	.hoverable:hover a:link {
+		/* @apply border-4 border-white dark:hover:border-b-black;		 */
 	}
 	
 
-	/* #hoverable Class Styles
-	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+	/* Megamenu */
 	.hoverable > .megamenu {
-		position: absolute;
+		position: absolute;	
 		text-align: left;
 		visibility: hidden;
 		opacity: 0;
-		width: 100%;
 		z-index: 1;
-		@apply w-full left-0 bg-black -translate-x-2 pt-2 pb-6;
-		transition: visibility 0.5s, opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), transform 1s cubic-bezier(0.075, 0.82, 0.165, 1), height 300ms ease, width 300ms ease;
+		@apply w-full left-0 bg-black -translate-x-4 pt-2 pb-6 pl-4;		
+		@apply border-t-2 border-b-2 border-white;
+		transition: visibility 0.5s, opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), height 300ms ease, width 300ms ease, border-width 0.6s linear;
 	}
 	.hoverable:hover > .megamenu {
 		visibility: visible;
 		opacity: 1;
 		@apply bg-black translate-x-0;
-	}
-	.hoverable:hover {
-		@apply bg-gray-900;
+		@apply dark:border-t-2 dark:border-b-2 dark:border-white;
 	}		
-	.hoverable {
-		position: static;
-	}	
-	.hoverable a {
-		@apply text-base text-gray-900 font-medium;
-	}
-	.hoverable:hover a {
-		@apply text-gray-50 bg-gray-900;
-	}
 	.hoverable:hover .megamenu-link a {
-		@apply text-pastel-orange;
+		@apply text-pastel-orange dark:bg-black font-normal normal-case;
 	}
 	.hoverable:hover .megamenu-link a:hover {
-		@apply text-gray-50;
+		@apply text-black dark:text-white;
 	}
 	.hoverable .megamenu ul {
 		@apply sm:w-1/2 lg:w-1/4 pt-4 px-4;
 	}
 	.hoverable .megamenu-header {
-		@apply flex items-center font-bold text-xl text-slate-50 mb-4;
+		@apply flex items-center uppercase font-normal text-base text-slate-50 mb-4;
 	}
 	.hoverable .megamenu-description {
-		@apply text-slate-300 text-sm mb-3;
+		@apply text-slate-300 text-sm mb-8;
 	}
 
-	:global(.dark) nav a {
-		@apply text-slate-100;
-	}
-	
 	.hoverable > a:after {
 		content: '\25BC';
 		font-size: 10px;
-		padding-left: 6px;
+		padding-left: 8px;
 		position: relative;
-		/* top: -1px; */
+		top: -3px;
 		transition: transform 1s;
 	}
-
-	/* .hoverable > a {
-		content: '\25BC';
-		font-size: 10px;
-		padding-left: 6px;
-		position: relative;
-		top: -1px;
-		transition: transform 1s;
-	} */
 
 	/* #toggle Class Styles
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */

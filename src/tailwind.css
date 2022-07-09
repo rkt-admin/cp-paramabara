@@ -53,9 +53,8 @@
 		/* background-color: grey; */
 	}
 }
-/* bg-yellow-200 dark:hover:bg-yellow-800 */
 a {
-	@apply text-slate-500 hover:text-slate-700 hover:no-underline dark:text-slate-400 dark:hover:text-slate-200;
+	@apply text-black hover:text-pastel-orange dark:text-white dark:hover:text-pastel-orange;
 }
 
 .prose h1 a,
@@ -100,9 +99,10 @@ body {
 	--scrollbar-primary-color: #d0d0d0;
 	--text-color: #bebebe;
 }
-/* .dark body {
-    --scrollbar-primary-color: #8db2e5;
-  } */
+.dark body {
+    --scrollbar-primary-color: white;
+	--scrollbar-secondary-color: white;
+  }
 /* body::-webkit-scrollbar-track {
     background-color: var(--bg-color);
   } */
@@ -110,8 +110,8 @@ body::-webkit-scrollbar {
 	width: 0.5rem;
 }
 body::-webkit-scrollbar-thumb {
-	background: linear-gradient(var(--scrollbar-primary-color), var(--text-color));
-	border-radius: 4px;
+	background: linear-gradient(var(--scrollbar-primary-color), var(--scrollbar-secondary-color));
+	border-radius: 2px;
 }
 
 /* Accordion */
@@ -149,7 +149,7 @@ body::-webkit-scrollbar-thumb {
 	float: right;
 }
 
-[data-accordion-item] button[aria-expanded="true"]:after{
+[data-accordion-item] button[aria-expanded='true']:after {
 	content: '\25BD';
 }
 

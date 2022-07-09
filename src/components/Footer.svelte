@@ -1,168 +1,177 @@
 <script>
 	import Logo from '../components/Logo.svelte';
-	let isDark = false;
-	if (typeof localStorage !== 'undefined') {
-		if (
-			localStorage.theme === 'dark' ||
-			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-		) {
-			isDark = true;
+	import { browser } from '$app/env';
+
+	let theme = '';
+	if (browser) {
+		if (localStorage.theme !== undefined) {
+			if (localStorage.theme === 'dark') {
+				theme = 'dark';
+			} else {
+				theme = 'light';
+			}
 		}
 	}
+
 	function toggleDarkMode() {
-		if (isDark) {
-			document.documentElement.classList.remove('dark');
-			localStorage.theme = 'light';
-			isDark = false;
-		} else {
-			document.documentElement.classList.add('dark');
-			localStorage.theme = 'dark';
-			isDark = true;
+		if (browser) {
+			if (localStorage.theme !== 'undefined') {
+				if (theme === 'dark') {
+					document.documentElement.classList.remove('dark');
+					theme = 'light';
+				} else {
+					document.documentElement.classList.add('dark');
+					theme = 'dark';
+				}
+
+				localStorage.setItem('theme', theme);
+			}
 		}
 	}
+
+	$: theme = theme;
 </script>
 
 <!-- footer -->
-<footer class="static mx-auto text-base z-0">
+<footer class="static mx-auto text-sm z-0">
 	<div
-		class="flex justify-center items-center md:justify-evenly font-normal text-slate-800 dark:text-slate-100 bg-slate-100 dark:bg-slate-800"
+		class="flex justify-between items-center md:justify-between font-normal text-slate-800 dark:text-slate-100 bg-white dark:bg-black"
 	>
-		<div class="footer-link">
-			<div class="text-gray-800 flex flex-wrap justify-start md:justify-evenly py-5">
-				<div class="px-2 py-3 w-[26rem] text-gray-600 dark:text-slate-300 ">
-					<div><Logo size="medium" text={true} /></div>
-					<div class="my-2 leading-7 mb-4">
-						Gedung Office 8, Lantai 37, Sudirman CBD Lot 28,<br />
-						Jl. Jend. Sudirman Kav. 52-53 (Jl. Senopati Raya 8B),<br />
-						Kebayoran Baru, Jakarta 12190, Indonesia.
-					</div>
-					<!-- <p class="flex items-center justify-center md:justify-start mb-4"></p> -->
-					<p class="flex mb-4 group">
-						<svg
-							aria-hidden="true"
-							focusable="false"
-							data-prefix="fas"
-							data-icon="envelope"
-							class="w-4 mr-4 group-hover:animate-bounce"
-							role="img"
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 512 512"
-						>
-							<path
-								fill="currentColor"
-								d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-							/>
-						</svg>
-						contact@example.com
-					</p>
-					<p class="flex mb-4 group">
-						<svg
-							aria-hidden="true"
-							focusable="false"
-							data-prefix="fas"
-							data-icon="phone"
-							class="w-4 mr-4 group-hover:animate-bounce"
-							role="img"
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 512 512"
-						>
-							<path
-								fill="currentColor"
-								d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-							/>
-						</svg>
-						+62 81 212 626 030
-					</p>
-					<p class="flex group">
-						<svg
-							aria-hidden="true"
-							focusable="false"
-							data-prefix="fas"
-							data-icon="print"
-							class="w-4 mr-4 group-hover:animate-bounce"
-							role="img"
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 512 512"
-						>
-							<path
-								fill="currentColor"
-								d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"
-							/>
-						</svg>
-						+62 234 567 89
-					</p>
+		<div class="flex flex-wrap justify-start md:justify-start py-5">
+			<div class="p-5 pl-0 w-[26rem]">
+				<div><Logo size="small" text={true} /></div>
+				<div class="my-2 leading-7 mb-4">
+					Gedung Office 8, Lantai 37, Sudirman CBD Lot 28,<br />
+					Jl. Jend. Sudirman Kav. 52-53 (Jl. Senopati Raya 8B),<br />
+					Kebayoran Baru, Jakarta 12190, Indonesia.
 				</div>
-				<div class="p-5 w-56 ">
-					<div class="header-section">Company</div>
-					<a href="/#">Company Overview</a>
-					<a href="/#">Core Value</a>
-					<a href="/#">Corporate Structure</a>
-					<a href="/#">Organization Structure</a>
-					<a href="/#">Career <span class="notice">*We're hiring</span></a>
-				</div>
-				<div class="p-5 w-56">
-					<div class="header-section">Media</div>
-					<a href="/#">News & Event</a>
-					<a href="/#">Company Insight<span class="notice">*New</span></a>
-					<a href="/#">Analytics</a>
-					<a href="/#">Mobile</a>
-				</div>
-				<div class="p-5 w-40 ">
-					<div class="header-section">Support</div>
-					<a href="/#">Help Center</a>
-					<a href="/#">Conditions </a>
-				</div>
-				<div class="py-5 w-10">
-					<button aria-label="Toggle Dark Mode" class="ml-1 flex h-9 w-9 items-center justify-center rounded-lg ring-gray-700 transition-all hover:ring-1 hover:ring-gray-700 dark:bg-slate-700" on:click={toggleDarkMode} >
-						{#if isDark}
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								class="h-5 w-5 text-gray-800 dark:text-yellow-100"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728
-							0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-								/>
-							</svg>
-						{:else}
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								class="w-5 h-5 text-gray-800 dark:text-gray-200"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-								/>
-							</svg>
-						{/if}
-					</button>
-				</div>
+				<!-- <p class="flex items-center justify-center md:justify-start mb-4"></p> -->
+				<p class="flex mb-4 group">
+					<svg
+						aria-hidden="true"
+						focusable="false"
+						data-prefix="fas"
+						data-icon="envelope"
+						class="w-4 mr-4 group-hover:animate-bounce"
+						role="img"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 512 512"
+					>
+						<path
+							fill="currentColor"
+							d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+						/>
+					</svg>
+					contact@example.com
+				</p>
+				<p class="flex mb-4 group">
+					<svg
+						aria-hidden="true"
+						focusable="false"
+						data-prefix="fas"
+						data-icon="phone"
+						class="w-4 mr-4 group-hover:animate-bounce"
+						role="img"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 512 512"
+					>
+						<path
+							fill="currentColor"
+							d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+						/>
+					</svg>
+					+62 81 212 626 030
+				</p>
+				<p class="flex group">
+					<svg
+						aria-hidden="true"
+						focusable="false"
+						data-prefix="fas"
+						data-icon="print"
+						class="w-4 mr-4 group-hover:animate-bounce"
+						role="img"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 512 512"
+					>
+						<path
+							fill="currentColor"
+							d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"
+						/>
+					</svg>
+					+62 234 567 89
+				</p>
+			</div>
+			<div class="p-5 w-52">
+				<div class="header-section">Company</div>
+				<a href="/#">Company Overview</a>
+				<a href="/#">Core Value</a>
+				<a href="/#">Corporate Structure</a>
+				<a href="/#">Organization Structure</a>
+				<a href="/#">Career <span class="notice">*We're hiring</span></a>
+			</div>
+			<div class="p-5 w-52">
+				<div class="header-section">Media</div>
+				<a href="/#">News & Event</a>
+				<a href="/#">Company Insight<span class="notice">*New</span></a>
+				<a href="/#">Analytics</a>
+				<a href="/#">Mobile</a>
+			</div>
+			<div class="p-5 w-44 ">
+				<div class="header-section">Support</div>
+				<a href="/#">Help Center</a>
+				<a href="/#">Conditions </a>
 			</div>
 		</div>
 	</div>
-	<div
-		class="flex justify-center items-center md:justify-evenly font-normal text-slate-800 dark:text-slate-100 bg-slate-200 dark:bg-slate-800"
-	>
-		<div class="mx-auto w-full max-w-5xl py-3 mt-1">
-			<div class="hidden sm:block float-left">
-				<span
-					>© 2022 <a href="https://site.com" class="hover:underline text-slate-700"
-						>PT Bintang Anggada Bara Energi</a
-					>. All Rights Reserved.</span
+	<div class="flex pb-5 justify-center">
+		<button
+			aria-label="Toggle Dark Mode"
+			class="ml-1 flex h-9 w-9 items-center justify-center rounded-lg ring-gray-700 transition-all hover:ring-1 hover:ring-gray-700 dark:bg-slate-700"
+			on:click={toggleDarkMode}
+		>
+			{#if theme == 'dark'}
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					class="h-5 w-5 text-gray-800 dark:text-yellow-100"
 				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728
+					0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+					/>
+				</svg>
+			{:else}
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					class="w-5 h-5 text-gray-800 dark:text-gray-200"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+					/>
+				</svg>
+			{/if}
+		</button>
+	</div>
+	<div
+		class="flex justify-center items-center md:justify-evenly font-normal text-slate-800 dark:text-slate-100 border-t-2 border-white"
+	>
+		<div class="mx-auto w-full max-w-5xl p-3">
+			<div class="flex float-left md:float-left">
+				© 2022 &nbsp;<a href="https://site.com">PT Bintang Anggada Bara Energi</a>.&nbsp;All Rights
+				Reserved.
 			</div>
-			<div class="footer-social flex justify-center float-right">
+			<div class="footer-social flex float-left md:float-right">
 				<a href="#!" class="mr-6">
 					<svg
 						aria-hidden="true"
@@ -275,21 +284,9 @@
 		@apply text-sm uppercase text-gray-400 font-medium mb-6;
 	}
 	.notice {
-		@apply text-teal-600 text-xs pl-1 -mt-1;
+		@apply text-pastel-orange text-xs pl-1 -mt-0;
 	}
-	.footer-link a {
-		@apply flex text-slate-600 pb-2;
-	}
-	.footer-link a:hover {
-		@apply flex text-pastel-orange;
-	}
-	:global(.dark) .footer-link a {
-		@apply flex text-slate-300 py-2;
-	}
-	.footer-social a {
-		@apply text-slate-700;
-	}
-	.footer-social a:hover {
-		@apply text-pastel-orange;
+	footer a {
+		@apply flex pb-4 hover:text-pastel-red;
 	}
 </style>
