@@ -16,6 +16,8 @@
 </div>
 <style lang="postcss">
 	h2 {
-		@apply text-xl w-full font-bold uppercase bg-slate-200 py-1 px-8 -mt-8 mb-0;
+		color: gold;
+		@apply text-xl w-full font-bold bg-gray-600 py-4 px-6 -mt-16 mb-0;
+		@apply bg-gray-900/80 dark:bg-black/80;
 	}
 </style>

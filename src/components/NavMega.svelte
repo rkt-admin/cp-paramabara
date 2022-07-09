@@ -1,8 +1,7 @@
-<script>	
+<script>
 	import Logo from './Logo.svelte';
 	import { SITE_URL, REPO_URL, RSS_URL } from '$lib/siteConfig';
 	import NavLink from './NavLink.svelte';
-	
 
 	let yScreen;
 	$: yScreen = yScreen;
@@ -13,15 +12,15 @@
 	<div class="flex flex-wrap justify-between items-center mx-auto">
 		<span class="hidden md:flex md:order-1 items-center">
 			<Logo text={true} size="small" />
-		</span>		
-		<div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
+		</span>
+		<div
+			class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
+			id="mobile-menu-2"
+		>
 			<ul class="flex">
 				<!--Regular Link-->
 				<li class="hoverable">
-					<a
-						href="/" class="relative block p-6 px-2 lg:px-6 lg:pt-6 lg:pb-5"
-						>About</a
-					>
+					<a href="/" class="relative block p-6 px-2 lg:px-6 lg:pt-6 lg:pb-5">About</a>
 					<div class="megamenu mb-0">
 						<div class="container mx-auto flex flex-wrap justify-between">
 							<ul>
@@ -33,7 +32,7 @@
 									talk and blind vampires.
 								</p>
 								<div class="megamenu-link">
-									<a href="/company-overview">Find out more...</a>
+									<a href="/company-overview">Find out more</a>
 								</div>
 							</ul>
 							<ul>
@@ -45,7 +44,7 @@
 									talk and blind vampires.
 								</p>
 								<div class="megamenu-link">
-									<a href="/core-value">Find out more...</a>
+									<a href="/core-value">Find out more</a>
 								</div>
 							</ul>
 							<ul>
@@ -57,7 +56,7 @@
 									talk and blind vampires.
 								</p>
 								<div class="megamenu-link">
-									<a href="/corporate-structure">Find out more...</a>
+									<a href="/corporate-structure">Find out more</a>
 								</div>
 							</ul>
 							<ul>
@@ -69,40 +68,33 @@
 									talk and blind vampires.
 								</p>
 								<div class="megamenu-link">
-									<a href="/organization-structure">Find out more...</a>
+									<a href="/organization-structure">Find out more</a>
 								</div>
 							</ul>
 						</div>
 					</div>
 				</li>
 				<li>
-					<a
-						href="/company-insight"
-						class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base"
+					<a href="/company-insight" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base"
 						>Company Insight</a
 					>
 				</li>
 				<li>
-					<a
-						href="/sustainability"
-						class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base"
+					<a href="/sustainability" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base"
 						>Sustainability</a
 					>
 				</li>
 				<li>
-					<a
-						href="/press-release"
-						class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base">Press Release</a
+					<a href="/press-release" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base"
+						>Press Release</a
 					>
 				</li>
 				<li>
-					<a
-						href="/news-event"
-						class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base">News</a
+					<a href="/news-event" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base">News</a
 					>
 				</li>
 			</ul>
-		</div>		
+		</div>
 	</div>
 </nav>
 
@@ -122,43 +114,52 @@
 	}
 	nav a:hover {
 		@apply text-white dark:text-black bg-black dark:bg-white;
-	}	
+	}
 
 	/* Main Menu > link megamenu */
 	.hoverable {
 		position: static;
-	}		
+	}
 	.hoverable a {
 		@apply text-black dark:text-white;
 		/* @apply border-4 border-white hover:border-4 hover:border-black dark:border-black dark:hover:border-white dark:hover:border-b-black;		 */
 	}
 	.hoverable:hover a {
 		@apply text-white dark:text-black bg-black dark:bg-white;
-	}	
+	}
 	.hoverable:hover a:link {
 		/* @apply border-4 border-white dark:hover:border-b-black;		 */
 	}
-	
 
 	/* Megamenu */
 	.hoverable > .megamenu {
-		position: absolute;	
+		position: absolute;
 		text-align: left;
 		visibility: hidden;
 		opacity: 0;
 		z-index: 1;
-		@apply w-full left-0 bg-black -translate-x-4 pt-2 pb-6 pl-4;		
-		@apply border-t-2 border-b-2 border-white;
-		transition: visibility 0.5s, opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), height 300ms ease, width 300ms ease, border-width 0.6s linear;
+		@apply w-full left-0 -translate-x-4 pt-2 pb-6 pl-4;
+		@apply border-t-2 border-b-2 border-gray-400;
+		background-image: '/assets/texture-carbon.png';
+		background-repeat: repeat;
+		transition: visibility 0.5s, opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+			transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), height 300ms ease, width 300ms ease,
+			border-width 0.6s linear;
 	}
 	.hoverable:hover > .megamenu {
 		visibility: visible;
 		opacity: 1;
-		@apply bg-black translate-x-0;
-		@apply dark:border-t-2 dark:border-b-2 dark:border-white;
-	}		
+		background: rgb(21, 21, 21);
+		background: -moz-linear-gradient(0deg, rgba(21, 21, 21, 1) 0%, rgba(57, 57, 57, 1) 100%);
+		background: -webkit-linear-gradient(0deg, rgba(21, 21, 21, 1) 0%, rgba(57, 57, 57, 1) 100%);
+		background: linear-gradient(0deg, rgba(21, 21, 21, 1) 0%, rgba(57, 57, 57, 1) 100%);
+		@apply translate-x-0;
+		@apply dark:border-t-2 dark:border-b-2 dark:border-gray-400;
+	}
 	.hoverable:hover .megamenu-link a {
-		@apply text-pastel-orange dark:bg-black font-normal normal-case;
+		/* background-color: #464647; */
+		color: #FDD017;
+		@apply bg-transparent font-normal normal-case;
 	}
 	.hoverable:hover .megamenu-link a:hover {
 		@apply text-black dark:text-white;

@@ -4,21 +4,21 @@
 
 <Background>
 	<div
-		class="inline-grid grid-cols-2 grid-rows-1 lg:grid-cols-2 lg:grid-rows-1 pl-8 pr-12 py-4 mt-14 ml-5 bg-gray-900/90 dark:bg-black/90 mx-auto"
+		class="inline-grid grid-cols-2 grid-rows-1 lg:grid-cols-2 lg:grid-rows-1 pl-8 pr-12 py-4 mt-14 ml-5 bg-gray-900/80 dark:bg-black/80 mx-auto"
 	>
 		<div class="col-span-2">
 			<div
-				class="max-w-xs items-left text-pastel-red dark:text-pastel-red text-base sm:text-base font-bold text-left md:text-left leading-none tracking-widest p-2 "
+				class="max-w-xs items-left text-yellow-400 dark:text-yellow-400 text-base sm:text-base font-bold text-left md:text-left leading-none tracking-widest p-2"
 			>
 				Energy Solution
 			</div>
 			<h2
-				class="uppercase max-w-3xl items-center text-pastel-orange dark:text-pastel-orange text-6xl font-bold text-left md:text-left sm:text-2xl leading-none tracking-tight p-2 "
+				class="uppercase max-w-3xl items-center text-white dark:text-white text-6xl font-bold text-left md:text-left sm:text-2xl leading-none tracking-tight p-2 "
 			>
 				Coal Mining Resources
 			</h2>
 			<div
-				class="max-w-2xl items-left text-gray-50 dark:text-slate-300 text-base sm:text-base font-normal text-left md:text-left leading-none tracking-normal p-2 "
+				class="max-w-2xl items-left text-gray-400 dark:text-gray-400 text-base sm:text-base font-normal text-left md:text-left leading-none tracking-normal p-2 "
 			>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque, magna sit amet
 				aliquam posuere, ante mi euismod lectus, non volutpat mauris magna ut nunc. Sed eget mauris

@@ -6,6 +6,10 @@ module.exports = {
 	],
 	darkMode: 'class',
 	theme: {
+		fontFamily: {			
+			sans: ['Merriweather Sans', 'sans-serif'],
+			// sans: ['Graphik', 'sans-serif'],
+		  },
 		extend: {
 			colors: {
 				'pastel-orange': '#ffa646',

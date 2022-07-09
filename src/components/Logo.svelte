@@ -35,12 +35,12 @@
 		@apply h-11;
 	}
 	.text-small {
-		@apply text-base;
+		@apply text-base font-bold;
 	}
 	.text-medium {
-		@apply text-lg;
+		@apply text-lg font-bold;
 	}
 	.text-large {
-		@apply text-xl;
+		@apply text-xl font-bold;
 	}
 </style>
