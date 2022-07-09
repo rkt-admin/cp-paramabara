@@ -5,7 +5,6 @@
 <script>
 	import Newsletter from '../components/Newsletter.svelte';
 	import FeatureCard from '../components/FeatureCard.svelte';
-	import Video from '../components/Video.svelte';
 	import Hero from '../components/Hero.svelte';
 </script>
 
@@ -13,7 +12,6 @@
 
 <div class="flex flex-col justify-center pb-16">
 	<Hero />
-	<!-- <Video /> -->
 
 	<!-- <section class="mb-16 w-full">
 		<h3 class="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
