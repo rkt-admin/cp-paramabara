@@ -1,4 +1,4 @@
-<script context="module">	
+<script context="module">
 	export const prerender = true; // index page is most visited, lets prerender
 </script>
 
@@ -6,13 +6,12 @@
 	import Newsletter from '../components/Newsletter.svelte';
 	import FeatureCard from '../components/FeatureCard.svelte';
 	import Hero from '../components/Hero.svelte';
+	import Files from '../components/Files.svelte';
 </script>
-
-
 
 <div class="flex flex-col justify-center pb-16">
 	<Hero />
-
+	<Files />
 	<!-- <section class="mb-16 w-full">
 		<h3 class="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
 			Featured Posts
@@ -44,6 +43,6 @@
 			></a
 		>
 	</section> -->
-	<!-- <Newsletter /> -->
-<div class="h-screen"></div>
+	<Newsletter />
+	<div class="h-screen" />
 </div>
