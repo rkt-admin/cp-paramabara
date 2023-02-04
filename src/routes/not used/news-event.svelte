@@ -1,7 +1,7 @@
 <script>
 	import { Accordion, AccordionItem } from 'svelte-accessible-accordion';
-	import Content from '../components/Content.svelte';
-	import ContentHeader from '../components/ContentHeader.svelte';
+	import Content from '../../components/Content.svelte';
+	import ContentHeader from '../../components/ContentHeader.svelte';
 	let expanded;
 </script>
 

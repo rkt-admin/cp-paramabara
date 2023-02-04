@@ -1,6 +1,6 @@
 <script>
 	import { Accordion, AccordionItem } from 'svelte-accessible-accordion';
-	import Content from '../components/Content.svelte';
+	import Content from '../../components/Content.svelte';
 </script>
 
 <Content>

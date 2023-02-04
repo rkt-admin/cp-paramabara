@@ -9,7 +9,7 @@
 
 <ContentHeader
 	url="https://www.bayan.com.sg/cfind/source/thumb/images/banner/cover_w1920_h393_banner-awards.jpg"
-	>COMPANY INSIGHT</ContentHeader
+	>CORPORATE STRUCTURE</ContentHeader
 >
 <ContentWrap>
 	<ContentSidebar>

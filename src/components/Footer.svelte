@@ -99,7 +99,7 @@
 			<a href="/sustainability">Sustainability</a>
 		</div>
 	</div>
-	<div class="flex justify-center pb-5">
+	<!-- <div class="flex justify-center pb-5">
 		<button
 			aria-label="Toggle Dark Mode"
 			class="ml-1 flex h-9 w-9 items-center justify-center rounded-lg ring-gray-700 transition-all hover:ring-1 hover:ring-gray-700 dark:bg-slate-700"
@@ -138,7 +138,7 @@
 				</svg>
 			{/if}
 		</button>
-	</div>
+	</div> -->
 	<div
 		class="flex items-center justify-center border-t-0 border-white font-normal text-slate-800 dark:text-slate-100 md:justify-evenly"
 	>
