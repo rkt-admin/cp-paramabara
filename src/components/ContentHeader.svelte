@@ -26,6 +26,6 @@
 	h2 {
 		color: white;
 		@apply -mt-16 mb-0 w-full bg-gray-600 py-4 px-6 text-xl font-semibold;
-		@apply bg-gray-900/80 dark:bg-black/80;
+		@apply bg-gray-900/80;
 	}
 </style>

@@ -19,7 +19,7 @@
 <svelte:head>
 	<title>{SITE_TITLE}</title>
 	<link rel="canonical" href={SITE_URL} />
-	<link rel="alternate" type="application/rss+xml" href={SITE_URL + '/api/rss.xml'} />
+	<link rel="alternate" type="application/rss+xml" title={'RSS Feed for ' + SITE_TITLE} href={SITE_URL + '/api/rss.xml'} />
 	<meta property="og:url" content={SITE_URL} />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={SITE_TITLE} />
@@ -31,12 +31,6 @@
 	<meta name="twitter:title" content={SITE_TITLE} />
 	<meta name="twitter:description" content={SITE_DESCRIPTION} />
 	<meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
-	<link
-		rel="alternate"
-		type="application/rss+xml"
-		title={'RSS Feed for ' + SITE_TITLE}
-		href="/rss.xml"
-	/>
 </svelte:head>
 <div class="container max-w-5xl mx-auto bg-white dark:bg-black px-4">
 	<MobileMenu />

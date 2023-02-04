@@ -84,12 +84,12 @@
 		</div>
 		<div class="main-link min-w-fit pr-16 pb-10">
 			<div class="header-section">ABOUT</div>
-			<a href="/#">Company Overview</a>
-			<a href="/#">Core Value</a>
-			<a href="/#">Corporate Structure</a>
-			<a href="/#">Organization Structure</a>
-			<a href="/#">Career <span class="notice">*We're hiring</span></a>
-			<a href="/#">Help Center</a>
+			<a href="/company-overview">Company Overview</a>
+			<a href="/core-value">Core Value</a>
+			<a href="/corporate-structure">Corporate Structure</a>
+			<a href="/organization-structure">Organization Structure</a>
+			<!-- <a href="/">Career <span class="notice">*We're hiring</span></a> -->
+			<!-- <a href="/">Help Center</a> -->
 		</div>
 		<div class="main-link w-60 min-w-fit pb-10">
 			<div class="header-section">COMPANY</div>
@@ -144,11 +144,11 @@
 	>
 		<div class="mx-auto w-full max-w-5xl p-3">
 			<div class="flex justify-center pb-4 md:float-left ">
-				© 2022 &nbsp;<a href="https://site.com">PT Bintang Anggada Bara Energi</a>.&nbsp;All Rights
+				© 2022 &nbsp;<a href="https://site.com">PT Parama Bara Intercontinental</a>.&nbsp;All Rights
 				Reserved.
 			</div>
 			<div class="footer-social flex justify-center pb-4 md:float-right ">
-				<a href="#!" class="mr-6">
+				<a href="/#" class="mr-6">
 					<svg
 						aria-hidden="true"
 						focusable="false"
@@ -165,7 +165,7 @@
 						/>
 					</svg>
 				</a>
-				<a href="#!" class="mr-6">
+				<a href="/#" class="mr-6">
 					<svg
 						aria-hidden="true"
 						focusable="false"
@@ -182,7 +182,7 @@
 						/>
 					</svg>
 				</a>
-				<a href="#!" class="mr-6">
+				<a href="/#" class="mr-6">
 					<svg
 						aria-hidden="true"
 						focusable="false"
@@ -199,7 +199,7 @@
 						/>
 					</svg>
 				</a>
-				<a href="#!" class="mr-6">
+				<a href="/#" class="mr-6">
 					<svg
 						aria-hidden="true"
 						focusable="false"
@@ -216,7 +216,7 @@
 						/>
 					</svg>
 				</a>
-				<a href="#!" class="mr-6">
+				<a href="/#" class="mr-6">
 					<svg
 						aria-hidden="true"
 						focusable="false"
@@ -233,7 +233,7 @@
 						/>
 					</svg>
 				</a>
-				<a href="#!">
+				<a href="/#">
 					<svg
 						aria-hidden="true"
 						focusable="false"

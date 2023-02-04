@@ -21,8 +21,7 @@
 			<ul class="flex">
 				<!--Regular Link-->
 				<li class="hoverable">
-					<!-- svelte-ignore a11y-invalid-attribute -->
-					<a href="#" class="menu-link">About</a>
+					<a href="/" class="menu-link">About</a>
 					<div class="megamenu mb-0">
 						<div class="container mx-auto flex flex-wrap justify-between">
 							<ul>
