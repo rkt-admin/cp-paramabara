@@ -84,7 +84,7 @@
 			<AccordionItem title="Title 3">Content 2</AccordionItem>
 		</AccordionItem>
 	</Accordion> -->
-		<ul class="menu absolute flex flex-col bg-gray-900 overflow-y-scroll" class:menuRendered={isMenuRendered}>
+		<ul class="menu absolute flex flex-col bg-black h-fit overflow-y-scroll" class:menuRendered={isMenuRendered}>
 			<li style="transition-delay: 150ms;">
 				<a sveltekit:prefetch on:click={() => setTimeout(() => (isOpen = false), 300)} href="/"
 					>Home</a

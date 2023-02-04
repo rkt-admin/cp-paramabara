@@ -8,19 +8,21 @@
 </script>
 
 <svelte:window bind:scrollY={yScreen} />
-<nav class="bg-white dark:bg-black top-0 sticky">
-	<div class="flex flex-wrap justify-between items-center mx-auto">
-		<span class="hidden md:flex md:order-1 items-center">
-			<Logo text={true} size="small" />
+<!-- <nav class="sticky top-0 bg-white dark:bg-black"></nav> -->
+<nav class="sticky top-0 bg-white dark:bg-black">
+	<div class="mx-auto flex flex-wrap items-center justify-between">
+		<span class="hidden items-center md:order-1 md:flex">
+			<Logo text={true} size="medium" />
 		</span>
 		<div
-			class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
+			class="z-10 hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
 			id="mobile-menu-2"
 		>
 			<ul class="flex">
 				<!--Regular Link-->
 				<li class="hoverable">
-					<a href="/" class="relative block p-6 px-2 lg:px-6 lg:pt-6 lg:pb-5">About</a>
+					<!-- svelte-ignore a11y-invalid-attribute -->
+					<a href="#" class="menu-link">About</a>
 					<div class="megamenu mb-0">
 						<div class="container mx-auto flex flex-wrap justify-between">
 							<ul>
@@ -75,23 +77,16 @@
 					</div>
 				</li>
 				<li>
-					<a href="/company-insight" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base"
-						>Company Insight</a
-					>
+					<a href="/company-insight" class="menu-link">Company Insight</a>
 				</li>
 				<li>
-					<a href="/sustainability" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base"
-						>Sustainability</a
-					>
+					<a href="/sustainability" class="menu-link">Sustainability</a>
 				</li>
 				<li>
-					<a href="/press-release" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base"
-						>Press Release</a
-					>
+					<a href="/press-release" class="menu-link">Press Release</a>
 				</li>
 				<li>
-					<a href="/news-event" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base">News</a
-					>
+					<a href="/news-event" class="menu-link">News</a>
 				</li>
 			</ul>
 		</div>
@@ -107,25 +102,22 @@
 	/* Main Menu */
 
 	nav a {
-		@apply text-black dark:text-white text-sm font-light uppercase;
-
-		/*hover*/
-		/* @apply border-4 border-white hover:border-black dark:border-black dark:hover:border-white; */
+		@apply text-sm font-light uppercase text-black dark:text-gray-400;
+		@apply border-b-2 border-black transition duration-700 ease-in-out hover:border-b-2 hover:border-white hover:text-white;
 	}
-	nav a:hover {
-		@apply text-white dark:text-black bg-black dark:bg-white;
+
+	.menu-link {
+		@apply relative mb-4 block px-4 pt-12 pb-3 text-sm lg:mb-4 lg:px-4 lg:pb-3 lg:text-sm;
 	}
 
 	/* Main Menu > link megamenu */
 	.hoverable {
 		position: static;
 	}
-	.hoverable a {
-		@apply text-black dark:text-white;
-		/* @apply border-4 border-white hover:border-4 hover:border-black dark:border-black dark:hover:border-white dark:hover:border-b-black;		 */
-	}
+
 	.hoverable:hover a {
-		@apply text-white dark:text-black bg-black dark:bg-white;
+		background: rgb(57, 57, 57);
+		@apply border-b-black bg-black text-white dark:bg-black dark:text-white;
 	}
 	.hoverable:hover a:link {
 		/* @apply border-4 border-white dark:hover:border-b-black;		 */
@@ -138,13 +130,10 @@
 		visibility: hidden;
 		opacity: 0;
 		z-index: 1;
-		@apply w-full left-0 -translate-x-4 pt-2 pb-6 pl-4;
-		@apply border-t-2 border-b-2 border-gray-400;
+		@apply left-0 w-full -translate-x-0 -translate-y-3 rounded-md pt-2 pb-6 pl-4;
+		@apply border-b-2 border-t-2 border-gray-100;
 		background-image: '/assets/texture-carbon.png';
 		background-repeat: repeat;
-		transition: visibility 0.5s, opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
-			transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), height 300ms ease, width 300ms ease,
-			border-width 0.6s linear;
 	}
 	.hoverable:hover > .megamenu {
 		visibility: visible;
@@ -153,25 +142,26 @@
 		background: -moz-linear-gradient(0deg, rgba(21, 21, 21, 1) 0%, rgba(57, 57, 57, 1) 100%);
 		background: -webkit-linear-gradient(0deg, rgba(21, 21, 21, 1) 0%, rgba(57, 57, 57, 1) 100%);
 		background: linear-gradient(0deg, rgba(21, 21, 21, 1) 0%, rgba(57, 57, 57, 1) 100%);
-		@apply translate-x-0;
-		@apply dark:border-t-2 dark:border-b-2 dark:border-gray-400;
+		@apply translate-x-0 -translate-y-5;
+		@apply dark:border-t-2 dark:border-b-2 dark:border-gray-100;
+		@apply transition-all duration-300 ease-in-out;
 	}
 	.hoverable:hover .megamenu-link a {
 		/* background-color: #464647; */
-		color: #FDD017;
+		color: #fdd017;
 		@apply bg-transparent font-normal normal-case;
 	}
 	.hoverable:hover .megamenu-link a:hover {
 		@apply text-black dark:text-white;
 	}
 	.hoverable .megamenu ul {
-		@apply sm:w-1/2 lg:w-1/4 pt-4 px-4;
+		@apply px-4 pt-4 sm:w-1/2 lg:w-1/4;
 	}
 	.hoverable .megamenu-header {
-		@apply flex items-center uppercase font-normal text-base text-slate-50 mb-4;
+		@apply mb-4 flex items-center text-sm font-normal uppercase text-slate-50;
 	}
 	.hoverable .megamenu-description {
-		@apply text-slate-300 text-sm mb-8;
+		@apply mb-8 text-sm text-slate-300;
 	}
 
 	.hoverable > a:after {
@@ -183,38 +173,24 @@
 		transition: transform 1s;
 	}
 
-	/* #toggle Class Styles
-	–––––––––––––––––––––––––––––––––––––––––––––––––– */
-	/* 
-	.toggleable > label:after {
-		content: '\25BC';
-		font-size: 10px;
-		padding-left: 6px;
-		position: relative;
-		top: -1px;
+	.animate {
+		animation-duration: 2s;
+		animation-name: animate-fade;
+		animation-delay: 2s;
+		animation-fill-mode: backwards;
 	}
 
-	.toggle-input {
-		display: none;
-	}
-	.toggle-input:not(checked) ~ .mega-menu {
-		display: none;
-	}
-
-	.toggle-input:checked ~ .mega-menu {
-		display: block;
+	@keyframes animate-fade {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
 	}
 
-	.toggle-input:checked + label {
-		color: white;
-		background: #2c5282;
+	.hvr-shrink {
+		-webkit-transition-duration: .5s;
+		transition-duration: .5s;
 	}
-
-	.toggle-input:checked ~ label:after {
-		content: '\25B2';
-		font-size: 10px;
-		padding-left: 6px;
-		position: relative;
-		top: -1px;
-	} */
 </style>

@@ -1,30 +1,26 @@
 <script>
 	import { Accordion, AccordionItem } from 'svelte-accessible-accordion';
-	import Content from '../components/Content.svelte';
-	import ContentHeader from '../components/ContentHeader.svelte';
+	import Content from '../../components/Content.svelte';
+	import ContentHeader from '../../components/ContentHeader.svelte';
+	import ContentWrap from '../../components/ContentWrap.svelte';
+	import ContentSidebar from '../../components/ContentSidebar.svelte';
 	let expanded;
 </script>
 
 <ContentHeader
 	url="https://www.bayan.com.sg/cfind/source/thumb/images/banner/cover_w1920_h393_banner-awards.jpg"
-	>Company Insight</ContentHeader
+	>SUSTAINABILITY</ContentHeader
 >
-<div class="flex flex-wrap max-w-5xl mx-auto">
-	<div class="w-60 sm:w-60 mr-4">
-		<Accordion multiselect>
-			<AccordionItem title="Title 1">
-				<li>Content 1</li>
-				<li>Content 2</li>
-				<li>Content 2</li>
-			</AccordionItem>
-			<AccordionItem title="Title 2">Content 2</AccordionItem>
-			<AccordionItem title="Title 3">
-				<AccordionItem title="Title 1">Content 1</AccordionItem>
-				<AccordionItem title="Title 2">Content 2</AccordionItem>
-				<AccordionItem title="Title 3">Content 2</AccordionItem>
+<ContentWrap>
+	<ContentSidebar>
+		<Accordion>
+			<AccordionItem expanded title="CSR 2023">
+					<li>CSR Q1</li>
+					<li>CSR Q2</li>
+					<li>CSR Q3</li>
 			</AccordionItem>
 		</Accordion>
-	</div>
+	</ContentSidebar>
 	<Content>
 		The business of the Bayan Group is strongly built on the strength of our experience in
 		Indonesia. Our President Director and Founder of Bayan Group - Dato’ Dr. Low Tuck Kwong’s
@@ -45,4 +41,4 @@
 		in 2018. This has rapidly increased Bayan’s position in the market now placing it within the top
 		5 Indonesian coal producers.
 	</Content>
-</div>
+</ContentWrap>

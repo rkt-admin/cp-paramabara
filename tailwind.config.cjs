@@ -6,16 +6,19 @@ module.exports = {
 	],
 	darkMode: 'class',
 	theme: {
-		fontFamily: {			
-			sans: ['Merriweather Sans', 'sans-serif'],
+		fontFamily: {
+			sans: ['Plus Jakarta Sans', 'sans-serif'],
 			// sans: ['Graphik', 'sans-serif'],
-		  },
+		},
 		extend: {
 			colors: {
 				'pastel-orange': '#ffa646',
 				'pastel-red': '#f86041',
 				'pastel-purple': '#982062',
-				'pastel-blue': '#343779'
+				'pastel-blue': '#343779',
+				'primary': '#eeefe9',
+				'secondary': '#e4e6dd',
+				'secondary-hover': '#d6d9cd'
 			},
 			animation: {
 				vote: 'vote 1s ease-in-out'

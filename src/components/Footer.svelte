@@ -1,6 +1,6 @@
 <script>
 	import Logo from '../components/Logo.svelte';
-	import { browser } from '$app/env';
+	import { browser } from '$app/environment';
 
 	let theme = '';
 	if (browser) {
@@ -33,97 +33,73 @@
 </script>
 
 <!-- footer -->
-<footer class="static mx-auto text-sm z-0">
+<footer class="static z-0 mx-auto mt-24 text-sm">
 	<div
-		class="flex justify-between items-center md:justify-between font-normal text-slate-800 dark:text-slate-100 bg-white dark:bg-black"
+		class="flex flex-wrap bg-white font-normal text-slate-800 dark:bg-black  dark:text-slate-100 sm:justify-between md:justify-between lg:justify-between xl:justify-around"
 	>
-		<div class="flex flex-wrap justify-start md:justify-start py-5">
-			<div class="p-5 pl-0 w-[26rem]">
-				<div><Logo size="small" text={true} /></div>
-				<div class="my-2 leading-7 mb-4">
-					Gedung Office 8, Lantai 37, Sudirman CBD Lot 28,<br />
-					Jl. Jend. Sudirman Kav. 52-53 (Jl. Senopati Raya 8B),<br />
-					Kebayoran Baru, Jakarta 12190, Indonesia.
-				</div>
-				<!-- <p class="flex items-center justify-center md:justify-start mb-4"></p> -->
-				<p class="flex mb-4 group">
-					<svg
-						aria-hidden="true"
-						focusable="false"
-						data-prefix="fas"
-						data-icon="envelope"
-						class="w-4 mr-4 group-hover:animate-bounce"
-						role="img"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 512 512"
-					>
-						<path
-							fill="currentColor"
-							d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-						/>
-					</svg>
-					contact@example.com
-				</p>
-				<p class="flex mb-4 group">
-					<svg
-						aria-hidden="true"
-						focusable="false"
-						data-prefix="fas"
-						data-icon="phone"
-						class="w-4 mr-4 group-hover:animate-bounce"
-						role="img"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 512 512"
-					>
-						<path
-							fill="currentColor"
-							d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-						/>
-					</svg>
-					+62 81 212 626 030
-				</p>
-				<p class="flex group">
-					<svg
-						aria-hidden="true"
-						focusable="false"
-						data-prefix="fas"
-						data-icon="print"
-						class="w-4 mr-4 group-hover:animate-bounce"
-						role="img"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 512 512"
-					>
-						<path
-							fill="currentColor"
-							d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"
-						/>
-					</svg>
-					+62 234 567 89
-				</p>
+		<div class="min-w-fit pr-10 pb-10">
+			<div><Logo size="small" text={true} /></div>
+			<div class="my-2 mb-4 leading-7">
+				TAMANSARI PARAMA BUILDING<br /> 
+				7th floor suite 7b<br /> 
+				Jl.Kh.Wahid Hasyim 84-86 , Menteng, Jakarta Pusat 10340 <br />				 
 			</div>
-			<div class="p-5 w-52">
-				<div class="header-section">Company</div>
-				<a href="/#">Company Overview</a>
-				<a href="/#">Core Value</a>
-				<a href="/#">Corporate Structure</a>
-				<a href="/#">Organization Structure</a>
-				<a href="/#">Career <span class="notice">*We're hiring</span></a>
-			</div>
-			<div class="p-5 w-52">
-				<div class="header-section">Media</div>
-				<a href="/#">News & Event</a>
-				<a href="/#">Company Insight<span class="notice">*New</span></a>
-				<a href="/#">Analytics</a>
-				<a href="/#">Mobile</a>
-			</div>
-			<div class="p-5 w-44 ">
-				<div class="header-section">Support</div>
-				<a href="/#">Help Center</a>
-				<a href="/#">Conditions </a>
-			</div>
+			<!-- <p class="flex items-center justify-center md:justify-start mb-4"></p> -->
+			<p class="group mb-4 flex">
+				<svg
+					aria-hidden="true"
+					focusable="false"
+					data-prefix="fas"
+					data-icon="envelope"
+					class="mr-4 w-4 group-hover:animate-bounce"
+					role="img"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 512 512"
+				>
+					<path
+						fill="currentColor"
+						d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+					/>
+				</svg>
+				email.info@paramabaraintercontinental.com
+			</p>
+			<p class="group mb-4 flex">
+				<svg
+					aria-hidden="true"
+					focusable="false"
+					data-prefix="fas"
+					data-icon="phone"
+					class="mr-4 w-4 group-hover:animate-bounce"
+					role="img"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 512 512"
+				>
+					<path
+						fill="currentColor"
+						d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+					/>
+				</svg>
+				+62 21 50200889
+			</p>
+		</div>
+		<div class="main-link min-w-fit pr-16 pb-10">
+			<div class="header-section">ABOUT</div>
+			<a href="/#">Company Overview</a>
+			<a href="/#">Core Value</a>
+			<a href="/#">Corporate Structure</a>
+			<a href="/#">Organization Structure</a>
+			<a href="/#">Career <span class="notice">*We're hiring</span></a>
+			<a href="/#">Help Center</a>
+		</div>
+		<div class="main-link w-60 min-w-fit pb-10">
+			<div class="header-section">COMPANY</div>
+			<a href="/news-event">News & Event</a>
+			<a href="/company-insight">Company Insight</a>
+			<a href="/press-release">Press Release</a>
+			<a href="/sustainability">Sustainability</a>
 		</div>
 	</div>
-	<div class="flex pb-5 justify-center">
+	<div class="flex justify-center pb-5">
 		<button
 			aria-label="Toggle Dark Mode"
 			class="ml-1 flex h-9 w-9 items-center justify-center rounded-lg ring-gray-700 transition-all hover:ring-1 hover:ring-gray-700 dark:bg-slate-700"
@@ -151,7 +127,7 @@
 					viewBox="0 0 24 24"
 					fill="none"
 					stroke="currentColor"
-					class="w-5 h-5 text-gray-800 dark:text-gray-200"
+					class="h-5 w-5 text-gray-800 dark:text-gray-200"
 				>
 					<path
 						stroke-linecap="round"
@@ -164,14 +140,14 @@
 		</button>
 	</div>
 	<div
-		class="flex justify-center items-center md:justify-evenly font-normal text-slate-800 dark:text-slate-100 border-t-2 border-white"
+		class="flex items-center justify-center border-t-0 border-white font-normal text-slate-800 dark:text-slate-100 md:justify-evenly"
 	>
 		<div class="mx-auto w-full max-w-5xl p-3">
-			<div class="flex float-left md:float-left">
+			<div class="flex justify-center pb-4 md:float-left ">
 				© 2022 &nbsp;<a href="https://site.com">PT Bintang Anggada Bara Energi</a>.&nbsp;All Rights
 				Reserved.
 			</div>
-			<div class="footer-social flex float-left md:float-right">
+			<div class="footer-social flex justify-center pb-4 md:float-right ">
 				<a href="#!" class="mr-6">
 					<svg
 						aria-hidden="true"
@@ -281,12 +257,15 @@
 
 <style lang="postcss">
 	.header-section {
-		@apply text-sm uppercase text-gray-400 font-medium mb-6;
+		@apply mb-6 pl-2 text-sm font-bold uppercase text-gray-400;
 	}
 	.notice {
-		@apply text-pastel-orange text-xs pl-1 -mt-0;
+		@apply -mt-0 pl-1 text-xs text-yellow-100;
 	}
 	footer a {
-		@apply flex pb-4 hover:text-pastel-red;
+		@apply transition delay-75 duration-300 ease-in-out hover:border-white hover:text-gray-400;
+	}
+	footer .main-link a {
+		@apply mb-4 flex border-l-2 border-black pl-2 transition duration-700 ease-in-out hover:border-l-2 hover:border-white hover:pl-2 hover:text-gray-300;
 	}
 </style>

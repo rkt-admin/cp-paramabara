@@ -38,7 +38,7 @@
 		href="/rss.xml"
 	/>
 </svelte:head>
-<div class="container max-w-5xl mx-auto bg-white dark:bg-black">
+<div class="container max-w-5xl mx-auto bg-white dark:bg-black px-4">
 	<MobileMenu />
 	<NavMega />
 	<div class="my-5">

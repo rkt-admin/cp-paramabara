@@ -5,7 +5,7 @@
 	import { SITE_URL, SITE_TITLE } from '$lib/siteConfig';
 </script>
 
-<div class="!text-transparent bg-clip-text focus:outline-none focus:shadow-outline inline-block">
+<div class="focus:shadow-outline inline-block bg-clip-text !text-transparent focus:outline-none">
 	<a href={SITE_URL} class="flex items-center">
 		<img
 			src="/assets/logo.svg"
@@ -15,32 +15,36 @@
 			alt="{SITE_TITLE} Logo"
 		/>
 		{#if text}
-			<div class="inline-block pt-0 h-6 font-light uppercase pl-2 text-lg
+			<div
+				class="inline-block h-6 pt-2 pl-2 text-lg font-light uppercase
 			{theme === 'light' ? 'text-slate-700 dark:text-slate-100' : 'text-slate-100 dark:text-slate-700'}"
-			class:text-small={size === 'small'}
-			class:text-medium={size === 'medium'}
-			class:text-large={size === 'large'}>PT Bintang Anggada Bara Energi</div>
+				class:text-small={size === 'small'}
+				class:text-medium={size === 'medium'}
+				class:text-large={size === 'large'}
+			>
+				{SITE_TITLE}
+			</div>
 		{/if}
 	</a>
 </div>
 
 <style lang="postcss">
 	.small {
-		@apply h-7;
+		@apply h-6 mt-2;
 	}
 	.medium {
-		@apply h-9;
+		@apply h-9 mt-2;
 	}
 	.large {
-		@apply h-11;
+		@apply h-11 mt-2;
 	}
 	.text-small {
-		@apply text-base font-bold;
+		@apply text-sm font-bold;
 	}
 	.text-medium {
-		@apply text-lg font-bold;
+		@apply text-base font-bold;
 	}
 	.text-large {
-		@apply text-xl font-bold;
+		@apply text-lg font-bold;
 	}
 </style>
