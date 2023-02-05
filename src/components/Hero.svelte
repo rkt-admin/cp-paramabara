@@ -7,13 +7,8 @@
 		class="inline-grid grid-cols-2 grid-rows-1 lg:grid-cols-2 lg:grid-rows-1 pl-8 pr-12 py-4 mt-14 ml-5 mx-auto z-0"
 	>
 		<div class="col-span-2">
-			<!-- <div
-				class="max-w-fit items-left text-yellow-400 dark:text-yellow-400 text-base sm:text-base font-bold text-left md:text-left leading-none p-2 bg-black/80 dark:bg-black/80"
-			>
-				ENERGY SOLUTION
-			</div> -->
 			<h2
-				class="max-w-fit uppercase items-center text-white dark:text-white text-6xl font-bold text-left md:text-left sm:text-2xl leading-none tracking-tight p-2 bg-black/80 dark:bg-black/80 "
+				class="max-w-2xl items-left uppercase text-white dark:text-white text-6xl font-bold text-left md:text-left sm:text-2xl leading-none tracking-tight p-2 bg-black/80 dark:bg-black/80 "
 			>
 				Coal Mining Resources
 			</h2>

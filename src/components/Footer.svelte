@@ -40,7 +40,7 @@
 		<div class="min-w-fit pr-10 pb-10">
 			<div><Logo size="small" text={true} /></div>
 			<div class="my-2 mb-4 leading-7">
-				TAMANSARI PARAMA BUILDING<br /> 
+				Tamansari Parama Building<br /> 
 				7th floor suite 7b<br /> 
 				Jl.Kh.Wahid Hasyim 84-86 , Menteng, Jakarta Pusat 10340 <br />				 
 			</div>

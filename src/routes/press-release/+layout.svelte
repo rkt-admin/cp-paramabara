@@ -11,7 +11,7 @@
 	url="https://www.bayan.com.sg/cfind/source/thumb/images/banner/cover_w1920_h393_banner-awards.jpg"
 >
 	<div class="grid grid-cols-8 gap-0">
-		<div class="col-start-1 col-end-4">PRESS RELEASE</div>
+		<div class="col-start-1 col-end-4">PRESS RELEASEaaa</div>
 		<div class="col-start-5 col-end-9">
 			<nav class="float-right flex" aria-label="Breadcrumb">
 				<ol class="inline-flex items-end space-x-1 md:space-x-3">
@@ -84,7 +84,8 @@
 			<AccordionItem title="2023 Q1">
 				<li>Content 1</li>
 				<li>Content 2</li>
-				<li>Content 2</li>
+				<li>Content 3</li>
+				<li>Content 4</li>
 			</AccordionItem>
 			<AccordionItem title="2023">
 				<AccordionItem title="Title 1">Content 1</AccordionItem>
@@ -94,20 +95,6 @@
 		</Accordion>
 	</ContentSidebar>
 	<Content>
-		<p>
-			PT. Parama Bara Intercontinental is an International Commodity Trading Company ,domicile in
-			Indonesia incorporated on december 2016, Our Founder & Ceo is a member of PARAMA BARA Group,
-			she has over 10 years of experience in commodity trading business and we are proud of our
-			reputation for fast and efficient service along with our professional ethic policy.
-		</p>
-		<p>
-			We also have vast knowledge of the commodity products such as Coal, Nickel, Antrachite and
-			with our wide range of stock, we are able to offer many options of commodity specifications to
-			suit variying applications and budget.
-		</p>
-		<p>
-			Our company provides an exclusive platform for trading partners to venture into Indonesian
-			energy and minerals business especially coal, nickel, anthracite.
-		</p>
+		<slot></slot>
 	</Content>
 </ContentWrap>
