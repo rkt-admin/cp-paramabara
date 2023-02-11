@@ -67,7 +67,7 @@ h6 a {
 	text-decoration: none !important;
 	@apply text-orange-700 dark:text-orange-400;
 }
-.prose h2::before {
+/* .prose h2::before {
 	content: '## ';
 }
 .prose h3::before {
@@ -75,7 +75,7 @@ h6 a {
 }
 .prose h4::before {
 	content: '#### ';
-}
+} */
 
 /* https://seek-oss.github.io/capsize/ */
 .capsize::before {

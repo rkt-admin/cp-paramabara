@@ -13,7 +13,7 @@
 	import '../tailwind.css';
 	import NavMega from '../components/NavMega.svelte';
 	import Footer from '../components/Footer.svelte';
-	import MobileMenu from '../components/MobileMenu.svelte';
+	import MobileMenu from '../components/MobileMenu.svelte';	
 </script>
 
 <svelte:head>

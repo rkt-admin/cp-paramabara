@@ -15,9 +15,7 @@
 			<div
 				class="max-w-2xl items-left text-gray-400 dark:text-gray-300 text-base sm:text-base font-normal text-left md:text-left leading-none tracking-normal p-2 bg-black/80 dark:bg-black/80 "
 			>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque, magna sit amet
-				aliquam posuere, ante mi euismod lectus, non volutpat mauris magna ut nunc. Sed eget mauris
-				felis. Cras commodo nibh odio, ut commodo turpis ultricies in.
+			PARAMA BARA INTERCONTINENTAL (PBI) was established in 2016, to handle the exportation of branded thermal coal of multi origins, namely Indonesia, Australia, South Africa, Russia as well as exporting coal and cokes from multi origin to reputable end users in various Asian Countries. PBI Holding is set up as for managing business entities when the business is growing in Asia.
 			</div>
 		</div>
 	</div>

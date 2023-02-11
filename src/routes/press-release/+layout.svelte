@@ -11,7 +11,7 @@
 	url="https://www.bayan.com.sg/cfind/source/thumb/images/banner/cover_w1920_h393_banner-awards.jpg"
 >
 	<div class="grid grid-cols-8 gap-0">
-		<div class="col-start-1 col-end-4">PRESS RELEASEaaa</div>
+		<div class="col-start-1 col-end-4">PRESS RELEASE</div>
 		<div class="col-start-5 col-end-9">
 			<nav class="float-right flex" aria-label="Breadcrumb">
 				<ol class="inline-flex items-end space-x-1 md:space-x-3">
