@@ -13,13 +13,18 @@
 	import '../tailwind.css';
 	import NavMega from '../components/NavMega.svelte';
 	import Footer from '../components/Footer.svelte';
-	import MobileMenu from '../components/MobileMenu.svelte';	
+	import MobileMenu from '../components/MobileMenu.svelte';
 </script>
 
 <svelte:head>
 	<title>{SITE_TITLE}</title>
 	<link rel="canonical" href={SITE_URL} />
-	<link rel="alternate" type="application/rss+xml" title={'RSS Feed for ' + SITE_TITLE} href={SITE_URL + '/api/rss.xml'} />
+	<link
+		rel="alternate"
+		type="application/rss+xml"
+		title={'RSS Feed for ' + SITE_TITLE}
+		href={SITE_URL + '/api/rss.xml'}
+	/>
 	<meta property="og:url" content={SITE_URL} />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={SITE_TITLE} />
@@ -31,8 +36,9 @@
 	<meta name="twitter:title" content={SITE_TITLE} />
 	<meta name="twitter:description" content={SITE_DESCRIPTION} />
 	<meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
+	<link rel="stylesheet" href="https://unpkg.com/carbon-components-svelte/css/g100.css" />
 </svelte:head>
-<div class="container max-w-5xl mx-auto bg-white dark:bg-black px-4">
+<div class="container mx-auto max-w-5xl bg-white px-4 dark:bg-black">
 	<MobileMenu />
 	<NavMega />
 	<div class="my-5">
