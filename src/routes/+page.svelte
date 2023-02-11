@@ -24,7 +24,7 @@
 </script>
 
 <Hero />
-<Gallery galleryID="gallery"  {images} />
+<!-- <Gallery galleryID="gallery"  {images} /> -->
 
 <!-- <div class="absolute top-0 left-5 -rotate-1 h-full w-[1px] bg-gray-100 z-50 m-0 p-0">&nbsp;</div>
 <div class="absolute top-0 right-5 rotate-1 h-full w-[1px] bg-gray-100 z-50 m-0 p-0">&nbsp;</div> -->

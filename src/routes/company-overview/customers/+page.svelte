@@ -1,4 +1,7 @@
+<script>
+	import Image from '../../../components/Image.svelte';
+</script>
+
 <h1>Customers</h1>
 
-<h2>Domestics</h2>
-<li></li>
+<Image url="/assets/Our Buyers.png"></Image>
