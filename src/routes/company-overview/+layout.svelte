@@ -6,6 +6,60 @@
 	import ContentSidebar from '../../components/ContentSidebar.svelte';
 	import NavLink from '../../components/NavLink.svelte';
 	let expanded;
+
+	import { TreeView } from 'carbon-components-svelte';
+	import { Router, Route, navigate } from 'svelte-routing';
+
+	let activeId = '';
+	let selectedIds = [];
+	let children = [
+		{
+			id: 0,
+			text: 'Company Overview',
+			children: [
+				{ id: 1, text: 'History' },
+				{ id: 2, text: 'Vision' },
+				{ id: 3, text: 'Services' },
+				{ id: 4, text: 'Customers' },
+				{ id: 5, text: 'Location' }
+			]
+		}
+	];
+
+	function handleSelect({ detail }) {
+		const selectedId = detail.id;
+		switch (selectedId) {
+			case 0:
+				navigate('/company-overview');
+				break;
+			case 1:
+				navigate('/company-overview/history');
+				break;
+			case 2:
+				navigate('/company-overview/vision');
+				break;
+			case 3:
+				navigate('/company-overview/services');
+				break;
+			case 4:
+				navigate('/company-overview/customers');
+				break;
+			case 5:
+				navigate('/company-overview/location');
+				break;
+			default:
+				break;
+		}
+	}
+
+
+import Base from './+page.svelte';
+import History from './history/+page.svelte';
+import Vision from './vision/+page.svelte';
+import Services from './services/+page.svelte';
+import Customers from './customers/+page.svelte';
+// import location from './services/+page.svelte';
+
 </script>
 
 <ContentHeader
@@ -81,13 +135,24 @@
 </ContentHeader>
 <ContentWrap>
 	<ContentSidebar>
-		<li><NavLink href="/company-overview/history">History</NavLink></li>
-		<li><NavLink href="/company-overview/vision">Vision</NavLink></li>
-		<li><NavLink href="/company-overview/services">Services</NavLink></li>
-		<li><NavLink href="/company-overview/customers">Customers</NavLink></li>
-		<li><NavLink href="/company-overview/location">Location</NavLink></li>
+		<TreeView
+			{children}
+			bind:activeId
+			bind:selectedIds
+			hideLabel
+			on:select={handleSelect}
+			on:toggle={({ detail }) => console.log('toggle', detail)}
+			on:focus={({ detail }) => console.log('focus', detail)}
+		/>
 	</ContentSidebar>
 	<Content>
-		<slot />
+		<Router>
+			<Route path="/company-overview" component={Base} />
+			<Route path="/company-overview/history" component={History} />
+			<Route path="/company-overview/vision" component={Vision} />
+			<Route path="/company-overview/services" component={Services} />
+			<Route path="/company-overview/customers" component={Customers} />
+			<!-- <Route path="/company-overview/location" component={Item2} /> -->
+		</Router>
 	</Content>
 </ContentWrap>

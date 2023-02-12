@@ -6,6 +6,43 @@
 	import ContentSidebar from '../../components/ContentSidebar.svelte';
 	import NavLink from '../../components/NavLink.svelte';
 	let expanded;
+
+	import { TreeView } from 'carbon-components-svelte';
+	import { Router, Route, navigate } from 'svelte-routing';
+
+	let activeId = '';
+	let selectedIds = [];
+	let children = [
+		{
+			id: 0,
+			text: 'Company Insight',
+			children: [
+				{ id: 1, text: 'Location' },
+				{ id: 2, text: 'How to Order' },
+			]
+		}
+	];
+
+	function handleSelect({ detail }) {
+		const selectedId = detail.id;
+		switch (selectedId) {
+			case 0:
+				navigate('/company-insight');
+				break;
+			case 1:
+				navigate('/company-insight/location');
+				break;
+			case 2:
+				navigate('/company-insight/how-to-order');
+				break;
+			default:
+				break;
+		}
+	}
+
+import Base from './+page.svelte';
+import Location from './location/+page.svelte';
+import HowToOrder from './how-to-order/+page.svelte';
 </script>
 
 <ContentHeader
@@ -81,10 +118,21 @@
 </ContentHeader>
 <ContentWrap>
 	<ContentSidebar>
-		<li><NavLink href="/company-insight/location">Location</NavLink></li>
-		<li><NavLink href="/company-insight/how-to-order">How to Order</NavLink></li>
+		<TreeView
+			{children}
+			bind:activeId
+			bind:selectedIds
+			hideLabel
+			on:select={handleSelect}
+			on:toggle={({ detail }) => console.log('toggle', detail)}
+			on:focus={({ detail }) => console.log('focus', detail)}
+		/>
 	</ContentSidebar>
 	<Content>
-		<slot />
+		<Router>
+			<Route path="/company-insight" component={Base} />
+			<Route path="/company-insight/location" component={Location} />
+			<Route path="/company-insight/how-to-order" component={HowToOrder} />
+		</Router>
 	</Content>
 </ContentWrap>
