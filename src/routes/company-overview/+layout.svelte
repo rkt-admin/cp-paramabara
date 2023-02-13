@@ -7,6 +7,7 @@
 	import NavLink from '../../components/NavLink.svelte';
 	let expanded;
 
+	import { onMount } from 'svelte';
 	import { TreeView } from 'carbon-components-svelte';
 	import { Router, Route, navigate } from 'svelte-routing';
 
@@ -51,7 +52,9 @@
 				break;
 		}
 	}
-
+onMount(() => {
+  navigate('/company-overview');
+});
 
 import Base from './+page.svelte';
 import History from './history/+page.svelte';
@@ -146,13 +149,13 @@ import Customers from './customers/+page.svelte';
 		/>
 	</ContentSidebar>
 	<Content>
+		<!-- <slot></slot> -->
 		<Router>
 			<Route path="/company-overview" component={Base} />
 			<Route path="/company-overview/history" component={History} />
 			<Route path="/company-overview/vision" component={Vision} />
 			<Route path="/company-overview/services" component={Services} />
 			<Route path="/company-overview/customers" component={Customers} />
-			<!-- <Route path="/company-overview/location" component={Item2} /> -->
 		</Router>
 	</Content>
 </ContentWrap>

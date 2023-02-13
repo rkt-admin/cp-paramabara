@@ -6,7 +6,8 @@
 	import ContentSidebar from '../../components/ContentSidebar.svelte';
 	import NavLink from '../../components/NavLink.svelte';
 	let expanded;
-
+	
+	import { onMount } from 'svelte';
 	import { TreeView } from 'carbon-components-svelte';
 	import { Router, Route, navigate } from 'svelte-routing';
 
@@ -39,6 +40,10 @@
 				break;
 		}
 	}
+
+onMount(() => {
+  navigate('/company-insight');
+});
 
 import Base from './+page.svelte';
 import Location from './location/+page.svelte';
